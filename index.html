@@ -54,15 +54,6 @@
         </div>
       </div>
 
-      <div id="theme-toggle">
-        <i id="light-mode-icon" class="fas fa-sun" style="color: white"></i>
-        <i
-          id="dark-mode-icon"
-          class="fas fa-moon"
-          style="display: none; color: white"
-        ></i>
-      </div>
-
       <div id="hamburger-icon" class="fas fa-bars"></div>
     </header>
 
@@ -181,74 +172,57 @@
           </div>
         </section>
 
-        <!-- skills -->
-        <section
-          class="skills section"
-          id="skills"
-          style="position: relative; margin-top: 90px"
-        >
+        <!-- Skills -->
+        <section class="skills section" id="skills">
           <h2 class="section-title">Skills</h2>
-
-          <div class="row">
-            <div class="col">
-              <!-- Second div -->
-              <h3 class="skills__tag">Programming Languages</h3>
-              <ul class="skills__p">
+          <div class="skills__container">
+            <!-- Programming Languages & Databases -->
+            <div class="skills__group">
+              <h3 class="skills__tag">Programming & Databases</h3>
+              <ul class="skills__list">
+                <li><i class="fab fa-js"></i> JavaScript</li>
                 <li><i class="fab fa-js"></i> TypeScript</li>
                 <li><i class="fab fa-java"></i> Java</li>
-                <li><i class="fab fa-js"></i> JavaScript</li>
               </ul>
-
-              <h3 class="skills__tag">Database Management</h3>
-              <ul class="skills__p">
+              <h3 class="skills__tag">Programming & Databases</h3>
+              <ul class="skills__list">
                 <li><i class="fas fa-database"></i> MySQL</li>
                 <li><i class="fas fa-database"></i> MongoDB</li>
               </ul>
             </div>
 
-            <div class="col">
-              <!-- Third div -->
-              <!-- Content of the third div goes here -->
-              <h3 class="skills__tag">Frameworks and Libraries</h3>
-              <ul class="skills__p">
-                <li><i class="fab fa-react"></i> React</li>
-                <li><i class="fab fa-angular"></i> Angular</li>
+            <!-- Frameworks & Libraries -->
+            <div class="skills__group">
+              <h3 class="skills__tag">Frameworks & Libraries</h3>
+              <ul class="skills__list">
+                <li><i class="fab fa-react"></i> React / React Native</li>
+                <li><i class="fab fa-angular"></i> AngularJS</li>
                 <li><i class="fab fa-css3"></i> Tailwind CSS</li>
                 <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                <li><i class="fab fa-node"></i> Node</li>
+                <li><i class="fab fa-node-js"></i> Node.js</li>
                 <li><i class="fab fa-js"></i> jQuery</li>
-                <li><i class="fab fa-react"></i> React Native</li>
-                <li><i class="fas fa-code"></i> Regular Expression</li>
-                <li><i class="fab fa-java"></i> Spring</li>
-                <li><i class="fab fa-java"></i> Spring Boot</li>
+                <li><i class="fas fa-code"></i> Regular Expressions</li>
+                <li><i class="fab fa-java"></i> Spring / Spring Boot</li>
                 <li><i class="fab fa-java"></i> Hibernate</li>
-
-                <li><i class="fab fa-java"></i> Maven</li>
+                <li><i class="fas fa-cogs"></i> Maven</li>
               </ul>
             </div>
 
-            <div class="col">
-              <!-- Third div -->
-              <!-- Content of the third div goes here -->
-              <h3 class="skills__tag">Others</h3>
-              <ul class="skills__p">
+            <!-- Tools & Architectures -->
+            <div class="skills__group">
+              <h3 class="skills__tag">Tools & Architectures</h3>
+              <ul class="skills__list">
                 <li><i class="fab fa-html5"></i> HTML</li>
                 <li><i class="fab fa-css3"></i> CSS</li>
                 <li><i class="fas fa-puzzle-piece"></i> Postman</li>
                 <li><i class="fab fa-figma"></i> Figma</li>
-                <li><i class="fab fa-github"></i> Github</li>
-                <li><i class="fab fa-git"></i> Git</li>
-                <li><i class="fas fa-layer-group"></i> MVC ( architecture )</li>
+                <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                <li><i class="fas fa-sitemap"></i> MVC Architecture</li>
                 <li>
-                  <i class="fas fa-layer-group"></i> Layered ( architectures )
+                  <i class="fas fa-layer-group"></i> Monolithic & Layered
+                  Architecture
                 </li>
-                <li>
-                  <i class="fas fa-layer-group"></i> Monolithic ( architectures
-                  )
-                </li>
-                <li>
-                  <i class="fas fa-layer-group"></i> REST ( architectures )
-                </li>
+                <li><i class="fas fa-network-wired"></i> REST Architecture</li>
               </ul>
             </div>
           </div>
@@ -494,7 +468,6 @@
           hamburgerIcon.style.display = "block"; // Display the hamburger icon
         }
       });
-
     </script>
   </body>
 </html>
