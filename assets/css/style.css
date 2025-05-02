@@ -470,6 +470,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+.card-content > a {
+    font-weight: 300;
+}
+
 .card-content > p:nth-child(1) {
     font-size: 1rem;
     font-weight: 600;

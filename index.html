@@ -29,7 +29,14 @@
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/media.css" />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   </head>
   <body>
     <div id="loader">
@@ -87,10 +94,10 @@
         </div>
       </section>
 
-      <section class="container px-2">
+      <section class="container px-2 mx-auto">
         <!-- about -->
 
-        <section class="about" id="about">
+        <section class="about" id="about" data-aos="fade-up">
           <div class="about-section">
             <div class="about-content">
               <div class="image-container">
@@ -124,7 +131,7 @@
 
         <!-- education -->
 
-        <section class="education" id="education">
+        <section class="education" id="education" data-aos="fade-up">
           <h2>Education</h2>
 
           <div class="details">
@@ -230,7 +237,7 @@
 
         <!-- projects -->
 
-        <section class="projects" id="projects">
+        <section class="projects mx-auto" id="projects">
           <h2 class="Project-name">Projects</h2>
 
           <div class="blob-c">
@@ -244,6 +251,25 @@
           </div>
 
           <section class="project-container">
+            <div class="card">
+              <img src="assets/img//project/Coffee Shop.jpg" alt="image" />
+
+              <div class="card-content">
+                <p>Coffee Shop Management App</p>
+                <p>
+                  This is a coffee shop mobile app that enables users to browse
+                  the menu, customize orders, and user profile settings. The app
+                  provides a seamless and intuitive experience for coffee
+                  lovers.
+                </p>
+                <a
+                  href="https://github.com/KavishkaIndeepa/Coffee-Shop"
+                  target="_blank"
+                  >Find Repo</a
+                >
+              </div>
+            </div>
+
             <div class="card">
               <img src="assets/img/project/ShoesShop.PNG" alt="image" />
 
@@ -330,25 +356,12 @@
               </div>
             </div>
 
-            <div class="card">
-              <img src="assets/img//project/guruge.png" alt="image" />
-
-              <div class="card-content">
-                <p>Rice Mile Management System</p>
-                <p>
-                  This Rice Mile Management System was made as a trick to Make
-                  transaction and Customermanagement easier.
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/Guruge-AD1-"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <a href="https://github.com/KavishkaIndeepa" target="_blank"
-              ><button>See More..</button></a
+            <a
+              href="https://github.com/KavishkaIndeepa"
+              target="_blank"
+              class="text-center text-white"
+            >
+              <button>See More..</button></a
             >
           </section>
         </section>
@@ -402,6 +415,9 @@
     </footer>
 
     <script>
+
+      AOS.init();
+
       let loader = document.getElementById("loader");
       window.addEventListener("load", function () {
         console.log(
