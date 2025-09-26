@@ -29,461 +29,465 @@
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/media.css" />
-    <!-- AOS CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
+      <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Alpine.js for tabs -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- SweetAlert2 CSS & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   </head>
   <body>
-    <div id="loader">
-      <div></div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 w-full bg-black/70 py-8 backdrop-blur-md shadow-lg z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-2xl font-bold text-blue-500">Kavishka Indeepa</div>
+      <ul class="hidden md:flex space-x-6 font-medium text-white scroll-smooth">
+        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+        <li><a href="#education" class="hover:text-blue-400 transition">Education</a></li>
+        <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-2xl text-white">&#9776;</button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-black md:hidden">
+      <ul class="flex flex-col space-y-4 p-6 text-white">
+        <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-400">About</a></li>
+        <li><a href="#education" class="hover:text-blue-400">Education</a></li>
+        <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+      </ul>
     </div>
-    <header>
-      <h1>My-Portfolio</h1>
-      <div class="nav-div">
-        <div class="nav-item"><a href="#home" class="nav-link">Home</a></div>
-        <div class="nav-item"><a href="#about" class="nav-link">About</a></div>
-        <div class="nav-item">
-          <a href="#education" class="nav-link">Education</a>
-        </div>
-        <div class="nav-item">
-          <a href="#skills" class="nav-link">Skills</a>
-        </div>
-        <div class="nav-item">
-          <a href="#projects" class="nav-link">Projects</a>
-        </div>
-        <div class="nav-item">
-          <a href="#contact" class="nav-link">Contact</a>
-        </div>
+  </header>
+
+<!-- ================= HERO SECTION ================= -->
+<section id="home" class="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white flex items-center">
+  <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 gap-12 mt-36 md:mt-24 mb-6 overflow-hidden">
+    
+    <!-- Left Content -->
+    <div class="md:w-1/2 text-center md:text-left order-2 md:order-1" data-aos="fade-right">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        Hi, I'm <span class="text-blue-500">Kavishka Indeepa</span>
+      </h1>
+      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+        Aspiring Software Engineer | Passionate about building modern, scalable, and innovative applications.
+        Dedicated to delivering impactful solutions for businesses and people.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row sm:justify-center md:justify-start gap-4">
+        <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-lg transition">
+          View Projects
+        </a>
+        <a href="#contact" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-full shadow-lg transition">
+          Contact Me
+        </a>
       </div>
 
-      <div id="hamburger-icon" class="fas fa-bars"></div>
-    </header>
+      <!-- Social Icons -->
+      <div class="flex justify-center md:justify-start mt-8 space-x-6 text-2xl">
+        <a href="https://www.linkedin.com/in/kavishka-indeepa-977bb9381/" target="_blank" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/KavishkaIndeepa" class="hover:text-blue-400"><i target="_blank" class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/share/1CiYNLcKco/" class="hover:text-blue-400"><i target="_blank" class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kavishka_indeepa/" class="hover:text-blue-400"><i target="_blank" class="fab fa-instagram"></i></a>
+      </div>
+    </div>
 
-    <main>
-      <!-- home -->
+    <!-- Right Side (Image) -->
+    <div class="md:w-1/2 flex justify-center order-1 md:order-2" data-aos="fade-left">
+      <img src="./assets//img//MY/KavishkaIndeepa.JPG" 
+           alt="Kavishka Indeepa" 
+           class="w-72 h-96 object-cover rounded-2xl shadow-2xl border-4 border-blue-500">
+    </div>
+  </div>
+</section>
 
-      <section class="home" id="home">
-        <div class="home-content">
-          <h2>I'M kavishka Indeepa</h2>
-          <p>Trainer Software Engineer in Sri Lanka.</p>
 
-          <!-- Add this div for social media icons -->
-          <div class="social-icons">
-            <a
-              href="https://www.linkedin.com/in/kavishka-indeepa-98585a264/"
-              target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/kavishka_indeepa/"
-              target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://github.com/KavishkaIndeepa" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://wa.me/+94779796003" target="_blank"
-              ><i class="fab fa-whatsapp"></i
-            ></a>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto flex flex-col md:flex-row items-center gap-12 px-6 overflow-hidden">
+    
+  <!-- About Text (first on mobile) -->
+  <div class="md:w-2/3 order-1 md:order-2" data-aos="fade-right">
+    <h2 class="text-4xl font-bold text-blue-500 mb-6">About Me</h2>
+    <p class="leading-relaxed mb-6 text-gray-700">
+      I am a passionate web developer with expertise in creating modern and responsive solutions. 
+      With a strong foundation in front-end and back-end technologies, I thrive in turning complex 
+      problems into user-friendly experiences. I’m always eager to learn, grow, and contribute to 
+      innovative projects that make an impact.
+    </p>
+    <a href="./assets/pdf/Kavishka Indeepa- CV .pdf" download 
+       class="inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-400 transition">
+      Download CV
+    </a>
+  </div>
+  
+  <!-- Portrait Image (second on mobile) -->
+  <div class="md:w-1/3 flex justify-center order-2 md:order-1" data-aos="zoom-in">
+    <img src="./assets//img/MY/About-me.JPG" alt="Profile Picture" 
+         class="w-72 h-[28rem] object-cover rounded-2xl border-4 border-blue-500 shadow-xl">
+  </div>
+</div>
+
+</section>
+
+
+  <!-- ================= EDUCATION SECTION ================= -->
+  <section id="education" class="py-20 bg-gray-50 text-black overflow-hidden">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-blue-500 mb-12" data-aos="fade-up">
+        Education
+      </h2>
+
+      <div class="relative border-l-4 border-blue-500 ml-6">
+        <!-- Ordinary Level -->
+        <div class="mb-10 ml-6" data-aos="fade-right">
+          <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+          <h3 class="text-2xl font-semibold ml-6">G. C. E. Ordinary Level Examination</h3>
+          <p class="text-gray-600 ml-6">Sri/Dewananda College, Ambalangoda</p>
+          <span class="text-blue-500 font-medium ml-6">2017</span>
+        </div>
+        <!-- Advanced Level -->
+        <div class="mb-10 ml-6" data-aos="fade-left">
+          <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+          <h3 class="text-2xl font-semibold ml-6">G. C. E. Advanced Level Examination</h3>
+          <p class="text-gray-600 ml-6">Commerce Stream, Sri/Dewananda College, Ambalangoda</p>
+          <span class="text-blue-500 font-medium ml-6">2020</span>
+        </div>
+        <!-- GDSE -->
+        <div class="mb-10 ml-6" data-aos="fade-right">
+          <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+          <h3 class="text-2xl font-semibold ml-6">Graduate Diploma in Software Engineering (GDSE)</h3>
+          <p class="text-gray-600 ml-6">Institute of Software Engineering (IJSE)</p>
+          <span class="text-blue-500 font-medium ml-6">Jan 2022 - 2024</span>
+        </div>
+        <!-- BSc -->
+        <div class="mb-10 ml-6" data-aos="fade-left">
+          <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">4</div>
+          <h3 class="text-2xl font-semibold ml-6">BSc (Hons) in Computing</h3>
+          <p class="text-gray-600 ml-6">University of Wrexham (UK)</p>
+          <span class="text-blue-500 font-medium ml-6">Feb 2025 - 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ================= SKILLS SECTION ================= -->
+<section id="skills" class="py-20 bg-white text-black overflow-hidden">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-blue-500 mb-12" data-aos="fade-up">
+      Skills
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Column -->
+      <div class="bg-gray-900 p-8 rounded-xl shadow hover:shadow-blue-400 transition" data-aos="fade-right">
+        <h3 class="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+          <i class="fas fa-code text-blue-400"></i> Programming & Databases
+        </h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><i class="fas fa-check text-blue-400"></i> JavaScript, TypeScript</li>
+          <li><i class="fas fa-check text-blue-400"></i> Java</li>
+          <li><i class="fas fa-check text-blue-400"></i> MySQL, MongoDB</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-900 p-8 rounded-xl shadow hover:shadow-blue-400 transition" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+          <i class="fas fa-laptop-code text-blue-400"></i> Frameworks & Libraries
+        </h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><i class="fas fa-check text-blue-400"></i> React, React Native, Angular</li>
+          <li><i class="fas fa-check text-blue-400"></i> Flutter, Dart</li>
+          <li><i class="fas fa-check text-blue-400"></i> Node.js, Spring Boot</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-900 p-8 rounded-xl shadow hover:shadow-blue-400 transition" data-aos="fade-left">
+        <h3 class="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+          <i class="fas fa-tools text-blue-400"></i> Tools & Architectures
+        </h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><i class="fas fa-check text-blue-400"></i> HTML, CSS, Tailwind</li>
+          <li><i class="fas fa-check text-blue-400"></i> Git, GitHub, Postman</li>
+          <li><i class="fas fa-check text-blue-400"></i> MVC, REST APIs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= PROJECTS SECTION ================= -->
+<section id="projects" class="py-20 text-white overflow-hidden">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-blue-400 mb-12" data-aos="fade-up">My Projects</h2>
+
+    <!-- Tabs -->
+    <div x-data="{ tab: 'web' }" data-aos="fade-up">
+      <div class="flex justify-center mb-10 space-x-6">
+        <button @click="tab = 'web'" 
+                :class="tab === 'web' ? 'bg-blue-500 text-white' : 'bg-gray-800 text-gray-300'"
+                class="px-5 py-2 rounded-lg font-medium transition">
+          Web
+        </button>
+        <button @click="tab = 'mobile'" 
+                :class="tab === 'mobile' ? 'bg-blue-500 text-white' : 'bg-gray-800 text-gray-300'"
+                class="px-5 py-2 rounded-lg font-medium transition">
+          Mobile
+        </button>
+        <button @click="tab = 'uiux'" 
+                :class="tab === 'uiux' ? 'bg-blue-500 text-white' : 'bg-gray-800 text-gray-300'"
+                class="px-5 py-2 rounded-lg font-medium transition">
+          UI/UX
+        </button>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10" data-aos="fade-up">
+
+        <!-- ====== Web Projects ====== -->
+
+        <!-- 1 -->
+        <div x-show="tab === 'web'" class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+          <img src="/Assets/Images/project/2DGame.PNG" alt="Web Project" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-blue-300 mb-2">E-Book Library System</h3>
+            <p class="text-gray-400 mb-4">A responsive full-stack e-commerce website with cart and payments.</p>
+            <a href="https://github.com/yourusername/web1" target="_blank" 
+               class="inline-block px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition">
+              View Project
+            </a>
           </div>
         </div>
-      </section>
 
-      <section class="container px-2 mx-auto">
-        <!-- about -->
-
-        <section class="about" id="about" data-aos="fade-up">
-          <div class="about-section">
-            <div class="about-content">
-              <div class="image-container">
-                <img
-                  src="assets/img/MY/About-me.JPG"
-                  alt="Your Alt Text"
-                  class="about-image"
-                />
-              </div>
-              <div class="text-area">
-                <h3>About Me</h3>
-                <p>
-                  I am a passionate web developer with expertise in creating
-                  modern and responsive websites. My goal is to provide
-                  high-quality solutions that meet the needs of clients and
-                  users. With a strong foundation in front-end and back-end
-                  technologies, I am ready to take on new challenges and
-                  contribute to innovative projects.
-                </p>
-
-                <a
-                  href="assets/pdf/Kavishka Indeepa- CV  .pdf"
-                  download
-                  class="download-button"
-                  >Download Resume</a
-                >
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- education -->
-
-        <section class="education" id="education" data-aos="fade-up">
-          <h2>Education</h2>
-
-          <div class="details">
-            <div class="education-item">
-              <p class="degree">
-                <i class="fas fa-graduation-cap"></i> Bachelor of Science (hons)
-                in Computing
-              </p>
-              <p class="institution">
-                University of Gloucestershire (UK) (Pending)
-              </p>
-              <p class="date">Scheduled to be finished on 2025</p>
-            </div>
-
-            <div class="education-item">
-              <p class="degree">
-                <i class="fas fa-graduation-cap"></i> Graduate Diploma in
-                Software Engineering (GDSE)
-              </p>
-              <p class="institution">
-                Institute of Software Engineering (IJSE)
-              </p>
-              <p class="date">From 18th of January 2022 - Present</p>
-            </div>
-
-            <div class="education-item">
-              <p class="degree">
-                <i class="fas fa-graduation-cap"></i>G. C. E. Advanced Level
-                Examination
-              </p>
-              <p class="institution">
-                Commerce Stream Sri/Dewananda College, Ambalangoda
-              </p>
-              <p class="date">2020</p>
-            </div>
-
-            <div class="education-item">
-              <p class="degree">
-                <i class="fas fa-graduation-cap"></i> G. C. E. Ordinary Level
-                Examination
-              </p>
-              <p class="institution">Sri/Dewananda College, Ambalangoda</p>
-              <p class="date">2017</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="skills section" id="skills">
-          <h2 class="section-title">Skills</h2>
-          <div class="skills__container">
-            <!-- Programming Languages & Databases -->
-            <div class="skills__group">
-              <h3 class="skills__tag">Programming & Databases</h3>
-              <ul class="skills__list">
-                <li><i class="fab fa-js"></i> JavaScript</li>
-                <li><i class="fab fa-js"></i> TypeScript</li>
-                <li><i class="fab fa-java"></i> Java</li>
-              </ul>
-              <h3 class="skills__tag">Programming & Databases</h3>
-              <ul class="skills__list">
-                <li><i class="fas fa-database"></i> MySQL</li>
-                <li><i class="fas fa-database"></i> MongoDB</li>
-              </ul>
-            </div>
-
-            <!-- Frameworks & Libraries -->
-            <div class="skills__group">
-              <h3 class="skills__tag">Frameworks & Libraries</h3>
-              <ul class="skills__list">
-                <li><i class="fab fa-react"></i> React / React Native</li>
-                <li><i class="fab fa-angular"></i> AngularJS</li>
-                <li><i class="fab fa-css3"></i> Tailwind CSS</li>
-                <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                <li><i class="fab fa-node-js"></i> Node.js</li>
-                <li><i class="fab fa-js"></i> jQuery</li>
-                <li><i class="fas fa-code"></i> Regular Expressions</li>
-                <li><i class="fab fa-java"></i> Spring / Spring Boot</li>
-                <li><i class="fab fa-java"></i> Hibernate</li>
-                <li><i class="fas fa-cogs"></i> Maven</li>
-              </ul>
-            </div>
-
-            <!-- Tools & Architectures -->
-            <div class="skills__group">
-              <h3 class="skills__tag">Tools & Architectures</h3>
-              <ul class="skills__list">
-                <li><i class="fab fa-html5"></i> HTML</li>
-                <li><i class="fab fa-css3"></i> CSS</li>
-                <li><i class="fas fa-puzzle-piece"></i> Postman</li>
-                <li><i class="fab fa-figma"></i> Figma</li>
-                <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-                <li><i class="fas fa-sitemap"></i> MVC Architecture</li>
-                <li>
-                  <i class="fas fa-layer-group"></i> Monolithic & Layered
-                  Architecture
-                </li>
-                <li><i class="fas fa-network-wired"></i> REST Architecture</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- projects -->
-
-        <section class="projects mx-auto" id="projects">
-          <h2 class="Project-name">Projects</h2>
-
-          <div class="blob-c">
-            <div class="shape-blob"></div>
-            <div class="shape-blob one"></div>
-            <div class="shape-blob two"></div>
-            <div class="shape-blob three"></div>
-            <div class="shape-blob four"></div>
-            <div class="shape-blob five"></div>
-            <div class="shape-blob six"></div>
-          </div>
-
-          <section class="project-container">
-            <div class="card">
-              <img src="assets/img//project/Coffee Shop.jpg" alt="image" />
-
-              <div class="card-content">
-                <p>Coffee Shop Management App</p>
-                <p>
-                  This is a coffee shop mobile app that enables users to browse
-                  the menu, customize orders, and user profile settings. The app
-                  provides a seamless and intuitive experience for coffee
-                  lovers.
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/Coffee-Shop"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="assets/img/project/ShoesShop.PNG" alt="image" />
-
-              <div class="card-content">
-                <p>ShoesShop</p>
-                <p>
-                  This Shoes Shop Management System was made as a trick to make
-                  transaction and customer managment easier.
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/React-Project"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="assets/img/project/EasyCarRental.PNG" alt="image" />
-
-              <div class="card-content">
-                <p>Easy Car Rental System</p>
-                <p>
-                  This Easy Car Rental System was made as a trick to Make car
-                  rental, Driver Managing, carManaging and Customer management
-                  easier
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/Easy_Car_Rental_System-new"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="assets/img/project/ChatApplication.PNG" alt="image" />
-
-              <div class="card-content">
-                <p>Chat Application</p>
-                <p>
-                  This Chat Application is a way for two or more people to chat
-                  simultaneously
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/Socket-Programming-Chat-Application"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="assets/img/project/orm.png" alt="image" />
-
-              <div class="card-content">
-                <p>Hostel Management System</p>
-                <p>
-                  This Hostel Management System was made as a trick to make
-                  manage a Hostel easier
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/ORM_Hibernate"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="assets/img//project/2DGame.PNG" alt="image" />
-
-              <div class="card-content">
-                <p>Jungel Runner -2D game</p>
-                <p>
-                  This is a 2D game. This game is designed to make a man run
-                  throught traps and if he hits a trap he will die.
-                </p>
-                <a
-                  href="https://github.com/KavishkaIndeepa/2D_GameNew"
-                  target="_blank"
-                  >Find Repo</a
-                >
-              </div>
-            </div>
-
-            <a
-              href="https://github.com/KavishkaIndeepa"
-              target="_blank"
-              class="text-center text-white"
-            >
-              <button>See More..</button></a
-            >
-          </section>
-        </section>
-
-        <!-- contact -->
-        <section class="contact-form" id="contact">
-          <h2>Contact Me</h2>
-
-          <form action="#" method="post">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button class="contact-button" type="submit">Send Message</button>
-          </form>
-
-          <div class="social-icons-contact">
-            <a
-              href="https://www.linkedin.com/in/kavishka-indeepa-98585a264/"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-
-            <a
-              href="https://www.instagram.com/kavishka_indeepa/"
-              target="_blank"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-
-            <a href="https://github.com/KavishkaIndeepa" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-
-            <a href="https://wa.me/+94779796003" target="_blank">
-              <i class="fab fa-whatsapp"></i>
+        <!-- 2 -->
+        <div x-show="tab === 'web'" class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+          <img src="web2.jpg" alt="Web Project" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-blue-300 mb-2">Portfolio Website</h3>
+            <p class="text-gray-400 mb-4">Personal portfolio website built with Tailwind CSS & animations.</p>
+            <a href="https://github.com/yourusername/web2" target="_blank" 
+               class="inline-block px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition">
+              View Project
             </a>
           </div>
-        </section>
-      </section>
-    </main>
+        </div>
 
-    <footer>
-      <p class="text-sm">© 2024 Kavishka Indeepa. All rights reserved.</p>
-    </footer>
+        <!-- ====== Mobile Projects ====== -->
+          <div x-show="tab === 'mobile'" class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+          <img src="./assets/img/project/HikkaCoffee.jpg" alt="Mobile Project" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-blue-300 mb-2">Coffee Shop Management App | Flutter</h3>
+            <p class="text-gray-400 mb-4">This is a coffee shop mobile app that enables users to browse the menu, customize orders, and user profile settings. The app provides a seamless and intuitive experience for coffee lovers.</p>
+            <a href="https://github.com/KavishkaIndeepa/Hikka_Coffee_Flutter_App" target="_blank" 
+               class="inline-block px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition">
+              View Project
+            </a>
+          </div>
+        </div>
 
+        <!-- 2 -->
+        <div x-show="tab === 'mobile'" class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+          <img src="./assets/img/project/Coffee Shop.jpg" alt="Mobile Project" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-blue-300 mb-2">Coffee Shop Management App| React-Native</h3>
+            <p class="text-gray-400 mb-4">This is a coffee shop mobile app that enables users to browse the menu, customize orders, and user profile settings. The app provides a seamless and intuitive experience for coffee lovers.</p>
+            <a href="https://github.com/KavishkaIndeepa/Coffee-Shop" target="_blank" 
+               class="inline-block px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition">
+              View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- ====== UI/UX Projects ====== -->
+        <div x-show="tab === 'uiux'" class="bg-gray-900 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+          <img src="uiux1.jpg" alt="UI/UX Project" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-blue-300 mb-2">Portfolio UI Design</h3>
+            <p class="text-gray-400 mb-4">Figma prototype & modern responsive UI implementation with Tailwind.</p>
+            <a href="https://github.com/yourusername/uiux1" target="_blank" 
+               class="inline-block px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-400 transition">
+              View Project
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= Contact Us Section ================= -->
+<section id="contact" class="overflow-hidden py-20">
+  <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+    
+    <!-- Left Side -->
+    <div data-aos="fade-right">
+      <h2 class="text-4xl font-bold mb-6 text-blue-400">Contact Us</h2>
+      <p class="mb-8">
+        Feel free to reach out! Whether it’s about collaboration, opportunities, or just to say hi.
+      </p>
+
+      <!-- Links -->
+      <div class="space-y-4 mb-8">
+        <a href="https://github.com/KavishkaIndeepa" target="_blank" 
+           class="flex items-center gap-3 text-gray-700 hover:text-blue-400 transition">
+          <i class="fab fa-github text-black text-xl"></i> Contribute on GitHub
+        </a>
+        <a href="tel:+94779796003" target="_blank" 
+           class="flex items-center gap-3 text-gray-700 hover:text-blue-400 transition">
+          <i class="fab fa-whatsapp text-xl text-green-400"></i> Contact on WhatsApp
+        </a>
+      </div>
+
+      <!-- Social Icons -->
+      <div>
+        <p class="font-medium mb-3">Follow me</p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/share/1CiYNLcKco/" target="_blank" class="text-gray-600 text-lg hover:text-blue-400"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/in/kavishka-indeepa-977bb9381/" target="_blank" class="text-gray-600 text-lg hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/KavishkaIndeepa" target="_blank" class="text-gray-600 text-lg hover:text-blue-400"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/kavishka_indeepa/" target="_blank" class="text-gray-600 text-lg hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <div class="p-8 rounded-2xl shadow-lg border border-gray-200" data-aos="fade-left">
+      <form id="contact-form" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input type="text" name="name" placeholder="Name" required
+            class="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="email" name="email" placeholder="Email" required
+            class="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input type="text" name="phone" placeholder="Phone"
+            class="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" name="subject" placeholder="Subject"
+            class="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <textarea rows="5" name="message" placeholder="Message"
+          class="w-full p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+        <button type="submit"
+          class="w-full py-3 text-white bg-blue-500 hover:bg-blue-400 rounded-lg font-semibold transition">
+          Send Message
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= Footer ================= -->
+<footer class="bg-gray-900 text-gray-300 mt-10">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Brand -->
+    <div>
+      <h2 class="text-2xl font-bold text-white">MyPortfolio</h2>
+      <p class="mt-3 text-sm">
+        Building modern web experiences with TypeScript & Tailwind.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+        <li><a href="#about" class="hover:text-white transition">About</a></li>
+        <li><a href="#education" class="hover:text-white transition">Education</a></li>
+        <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-3">Follow Me</h3>
+      <div class="flex space-x-5 text-2xl">
+        <a href="https://www.linkedin.com/in/kavishka-indeepa-977bb9381/" target="_blank" class="hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/KavishkaIndeepa" target="_blank" class="hover:text-blue-500"><i class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/share/1CiYNLcKco/" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kavishka_indeepa/" target="_blank" class="hover:text-blue-500"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-gray-700 text-center py-4 text-sm">
+    © <span id="year"></span> Kavishka Indeepa. All rights reserved.
+  </div>
+</footer>
+
+
+
+    <!-- ================= AOS + JS ================= -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-
-      AOS.init();
-
-      let loader = document.getElementById("loader");
-      window.addEventListener("load", function () {
-        console.log(
-          "This message will print just after fully loading the website"
-        );
-        loader.style.display = "none";
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+      once: true,
       });
-
-      // modes
-
-      const toggle = document.getElementById("theme-toggle");
-      const body = document.body;
-
-      toggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const isDarkMode = body.classList.contains("dark-mode");
-        document.getElementById("light-mode-icon").style.display = isDarkMode
-          ? "none"
-          : "block";
-        document.getElementById("dark-mode-icon").style.display = isDarkMode
-          ? "block"
-          : "none";
-      });
-
-      // header hide
-      let lastScrollY = window.scrollY;
-      const header = document.querySelector("header");
-
-      window.addEventListener("scroll", () => {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > lastScrollY) {
-          // Scrolling down
-          header.classList.add("hidden");
-        } else {
-          // Scrolling up
-          header.classList.remove("hidden");
-        }
-
-        lastScrollY = currentScrollY;
-      });
-
-      document
-        .getElementById("hamburger-icon")
-        .addEventListener("click", function () {
-          var navDiv = document.querySelector(".nav-div");
-          navDiv.style.display =
-            navDiv.style.display === "none" || navDiv.style.display === ""
-              ? "block"
-              : "none";
-        });
-
-      // Add this event listener to handle resizing
-      window.addEventListener("resize", function () {
-        var navDiv = document.querySelector(".nav-div");
-        var hamburgerIcon = document.getElementById("hamburger-icon");
-
-        // Check if the screen size is larger and reset the navigation visibility
-        if (window.innerWidth > 430) {
-          navDiv.style.display = "flex"; // Display the regular navigation
-          hamburgerIcon.style.display = "none"; // Hide the hamburger icon
-        } else {
-          navDiv.style.display = "none"; // Hide the regular navigation
-          hamburgerIcon.style.display = "block"; // Display the hamburger icon
-        }
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
       });
     </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("oWNe54gKcJ23974uV");
+      })();
+    </script>
+
+      <script>
+      document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        emailjs.sendForm("service_76l094o", "template_1cfaadl", this)
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: "Message Sent!",
+              text: "Thank you for reaching out. I’ll get back to you soon.",
+              confirmButtonColor: "#3085d6"
+            });
+          }, (error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Failed to send your message: " + error.text,
+              confirmButtonColor: "#d33"
+            });
+          });
+      });
+    </script>
+
   </body>
 </html>
