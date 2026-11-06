@@ -49,7 +49,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 16px);
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -189,7 +189,8 @@ img {
   color: var(--text);
 }
 
-.nav-links a[aria-current="page"] {
+.nav-links a[aria-current],
+.footer-links a[aria-current] {
   color: var(--accent);
 }
 
@@ -316,15 +317,14 @@ img {
 /* ==========================================================================
    Page layout
    ========================================================================== */
-.page {
-  padding-top: var(--header-height);
-}
-
 .section {
   padding: 72px 0;
 }
 
-.page-title,
+.section-alt {
+  background: var(--surface-alt);
+}
+
 .section-title {
   margin-bottom: 24px;
   color: var(--accent);
@@ -333,9 +333,14 @@ img {
   line-height: 1.2;
 }
 
-.section-title,
 .centered {
   margin-bottom: 44px;
+  text-align: center;
+}
+
+.load-error {
+  padding: 24px;
+  color: var(--muted);
   text-align: center;
 }
 
@@ -506,7 +511,7 @@ img {
   font-weight: 700;
 }
 
-.timeline-item h2 {
+.timeline-item h3 {
   font-size: 1.2rem;
 }
 
@@ -530,51 +535,34 @@ img {
   box-shadow: var(--shadow);
 }
 
-.skill-card h2 {
+.skill-card h3 {
   margin-bottom: 22px;
   font-size: 1.15rem;
 }
 
-.skill-card h2 i {
+.skill-card h3 i {
   margin-right: 6px;
   color: var(--accent);
 }
 
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .skill {
-  margin-bottom: 14px;
-  font-size: 0.95rem;
-}
-
-.skill span {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.skill-bar {
-  display: block;
-  overflow: hidden;
-  height: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: var(--surface-alt);
+  background: var(--bg);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.skill-bar::after {
-  content: "";
-  display: block;
-  width: var(--level);
-  height: 100%;
-  border-radius: inherit;
-  background: var(--accent);
-}
-
-/* The bars grow when scrolled into view. They stay full without JavaScript. */
-.js .skill-bar::after {
-  width: 0;
-  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.js .skill.is-visible .skill-bar::after {
-  width: var(--level);
+.skill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ==========================================================================
@@ -642,7 +630,7 @@ img {
   padding: 22px;
 }
 
-.project-body h2 {
+.project-body h3 {
   font-size: 1.15rem;
   line-height: 1.35;
 }

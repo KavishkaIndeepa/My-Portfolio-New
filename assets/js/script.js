@@ -51,10 +51,43 @@
     });
 
     document.addEventListener('click', function (event) {
-      if (!event.target.closest('.navbar')) {
+      /* Links scroll within this page, so the menu has to close itself. */
+      if (!event.target.closest('.navbar') || event.target.closest('.nav-links a')) {
         setOpen(false);
       }
     });
+  }
+
+  /* ---------- Highlight the section currently on screen ---------- */
+  function initScrollSpy() {
+    var links = document.querySelectorAll('.nav-links a, .footer-links a');
+    var sections = Array.prototype.map.call(document.querySelectorAll('.nav-links a'), function (link) {
+      return document.querySelector(link.getAttribute('href'));
+    });
+
+    return function update() {
+      var marker = window.scrollY + window.innerHeight * 0.35;
+      var isAtBottom = window.scrollY + window.innerHeight >= root.scrollHeight - 2;
+      var current = sections[0];
+
+      sections.forEach(function (section) {
+        if (section.offsetTop <= marker) {
+          current = section;
+        }
+      });
+
+      if (isAtBottom) {
+        current = sections[sections.length - 1];
+      }
+
+      links.forEach(function (link) {
+        if (link.getAttribute('href') === '#' + current.id) {
+          link.setAttribute('aria-current', 'true');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
   }
 
   /* ---------- Header shadow, scroll progress and back-to-top ---------- */
@@ -62,6 +95,7 @@
     var header = document.querySelector('.site-header');
     var progress = document.querySelector('.scroll-progress');
     var backToTop = document.getElementById('back-to-top');
+    var updateScrollSpy = initScrollSpy();
     var isQueued = false;
 
     function update() {
@@ -70,6 +104,7 @@
       header.classList.toggle('is-scrolled', position > 10);
       backToTop.classList.toggle('is-visible', position > 400);
       progress.style.transform = 'scaleX(' + (scrollable > 0 ? position / scrollable : 0) + ')';
+      updateScrollSpy();
       isQueued = false;
     }
 
@@ -89,9 +124,9 @@
     update();
   }
 
-  /* ---------- Scroll animations and animated skill bars ---------- */
+  /* ---------- Scroll animations ---------- */
   function initRevealOnScroll() {
-    var elements = document.querySelectorAll('.reveal, .skill');
+    var elements = document.querySelectorAll('.reveal');
 
     if (!('IntersectionObserver' in window)) {
       elements.forEach(function (element) {
@@ -148,20 +183,42 @@
       status.textContent = 'Showing ' + shown + (shown === 1 ? ' project' : ' projects');
     }
 
+    function isCategory(name) {
+      return name !== 'all' && Array.prototype.some.call(buttons, function (button) {
+        return button.getAttribute('data-filter') === name;
+      });
+    }
+
+    /* Links such as #mobile jump to the projects section on that category. */
+    function applyFilterFromLink() {
+      var requested = location.hash.slice(1);
+      if (isCategory(requested)) {
+        applyFilter(requested);
+        document.getElementById('projects').scrollIntoView();
+      }
+    }
+
     buttons.forEach(function (button) {
       button.addEventListener('click', function () {
         var filter = button.getAttribute('data-filter');
         applyFilter(filter);
-        history.replaceState(null, '', filter === 'all' ? location.pathname : '#' + filter);
+        history.replaceState(null, '', '#' + (filter === 'all' ? 'projects' : filter));
       });
     });
 
-    /* Links such as projects.html#mobile open on that category. */
-    var requested = location.hash.slice(1);
-    var isKnownFilter = Array.prototype.some.call(buttons, function (button) {
-      return button.getAttribute('data-filter') === requested;
-    });
-    applyFilter(isKnownFilter ? requested : 'all');
+    window.addEventListener('hashchange', applyFilterFromLink);
+
+    applyFilter('all');
+    applyFilterFromLink();
+  }
+
+  /* ---------- Open on the requested section ---------- */
+  /* The browser looks for #about before the sections exist, so jump there once they have loaded. */
+  function scrollToLinkedSection() {
+    var target = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto' });
+    }
   }
 
   /* ---------- Rotating role on the home page ---------- */
@@ -187,8 +244,12 @@
 
   initThemeToggle();
   initNavigation();
-  initScrollEffects();
-  initProjectFilter();
-  initRevealOnScroll();
-  initRoleRotator();
+
+  window.sectionsReady.then(function () {
+    scrollToLinkedSection();
+    initProjectFilter();
+    initScrollEffects();
+    initRevealOnScroll();
+    initRoleRotator();
+  });
 })();

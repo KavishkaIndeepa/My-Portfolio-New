@@ -7,62 +7,32 @@
   <meta name="description" content="Portfolio of Kavishka Indeepa, an aspiring software engineer building modern web and mobile applications.">
   <meta name="keywords" content="Kavishka Indeepa, software engineer, web developer, portfolio, IJSE, GDSE, Sri Lanka">
   <meta name="author" content="Kavishka Indeepa">
-  <link rel="icon" href="Home.JPG">
+  <link rel="icon" href="assets/img/Home.JPG">
   <link rel="stylesheet" href="assets/fontAwsom/fontawesome-free-6.4.0-web/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/media.css">
   <script src="assets/js/theme.js"></script>
+  <script src="assets/js/sections.js" defer></script>
   <script src="assets/js/layout.js" defer></script>
   <script src="assets/js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
 </head>
-<body data-page="home">
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text reveal">
-          <p class="eyebrow" id="role-rotator">Aspiring Software Engineer</p>
-          <h1>Hi, I'm <span class="accent">Kavishka Indeepa</span></h1>
-          <p class="lead">
-            Aspiring Software Engineer | Passionate about building modern, scalable, and innovative applications.
-            Dedicated to delivering impactful solutions for businesses and people.
-          </p>
-          <div class="button-row">
-            <a class="button button-primary" href="projects.html">View Projects</a>
-            <a class="button button-secondary" href="contact.html">Contact Me</a>
-          </div>
-          <div class="social-links" data-social-links></div>
-        </div>
-        <div class="reveal" style="--delay: 150ms">
-          <img class="portrait" src="assets/img/MY/KavishkaIndeepa.JPG" alt="Kavishka Indeepa in GDSE graduation attire" width="288" height="384">
-        </div>
-      </div>
-      <a class="scroll-cue" href="#what-i-do" aria-label="Scroll to what I do"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-    </section>
+<body>
+  <noscript><p class="load-error">Please enable JavaScript to view this portfolio.</p></noscript>
 
-    <section class="section" id="what-i-do">
-      <div class="container">
-        <h2 class="section-title reveal">What I Do</h2>
-        <div class="card-grid">
-          <a class="feature-card reveal" href="projects.html#web">
-            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-            <h3>Web Development</h3>
-            <p>Full-stack web applications built with React, Angular, Node.js, and Spring Boot.</p>
-          </a>
-          <a class="feature-card reveal" style="--delay: 100ms" href="projects.html#mobile">
-            <i class="fas fa-mobile-screen-button" aria-hidden="true"></i>
-            <h3>Mobile Apps</h3>
-            <p>Cross-platform mobile apps built with Flutter and React Native.</p>
-          </a>
-          <a class="feature-card reveal" style="--delay: 200ms" href="projects.html#uiux">
-            <i class="fas fa-pen-nib" aria-hidden="true"></i>
-            <h3>UI/UX Design</h3>
-            <p>Modern interface designs and interactive prototypes created in Figma.</p>
-          </a>
-        </div>
-      </div>
-    </section>
+  <!-- Each section's content lives in the matching file inside the pages folder. -->
+  <main id="main">
+    <section class="hero" id="home" data-src="pages/home.html"></section>
+    <section class="section" id="what-i-do" data-src="pages/services.html"></section>
+    <section class="section section-alt" id="about" data-src="pages/about.html"></section>
+    <section class="section" id="education" data-src="pages/education.html"></section>
+    <section class="section section-alt" id="skills" data-src="pages/skills.html"></section>
+    <section class="section" id="projects" data-src="pages/projects.html"></section>
+    <section class="section section-alt" id="contact" data-src="pages/contact.html"></section>
   </main>
 </body>
 </html>

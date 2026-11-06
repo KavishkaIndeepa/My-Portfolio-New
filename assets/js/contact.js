@@ -1,10 +1,14 @@
 /* Contact form: sends through EmailJS and reports the result. */
-(function () {
+window.sectionsReady.then(function () {
   var PUBLIC_KEY = 'oWNe54gKcJ23974uV';
   var SERVICE_ID = 'service_59fyps5';
   var TEMPLATE_ID = 'template_1cfaadl';
 
   var form = document.getElementById('contact-form');
+  if (!form) {
+    return; /* The contact section failed to load. */
+  }
+
   var submitButton = form.querySelector('button[type="submit"]');
 
   emailjs.init(PUBLIC_KEY);
@@ -46,4 +50,4 @@
         setSending(false);
       });
   });
-})();
+});

@@ -1,12 +1,12 @@
-/* Shared header, footer and social links. Edit them here and every page updates. */
+/* Shared header, footer and social links. Edit them here to update the whole site. */
 (function () {
   var NAV_LINKS = [
-    { page: 'home', label: 'Home', href: 'index.html' },
-    { page: 'about', label: 'About', href: 'about.html' },
-    { page: 'education', label: 'Education', href: 'education.html' },
-    { page: 'skills', label: 'Skills', href: 'skills.html' },
-    { page: 'projects', label: 'Projects', href: 'projects.html' },
-    { page: 'contact', label: 'Contact', href: 'contact.html' }
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Education', href: '#education' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Contact', href: '#contact' }
   ];
 
   var SOCIAL_LINKS = [
@@ -16,12 +16,9 @@
     { label: 'Instagram', icon: 'fa-instagram', href: 'https://www.instagram.com/kavishka_indeepa/' }
   ];
 
-  var currentPage = document.body.getAttribute('data-page');
-
   function navItems() {
     return NAV_LINKS.map(function (link) {
-      var current = link.page === currentPage ? ' aria-current="page"' : '';
-      return '<li><a href="' + link.href + '"' + current + '>' + link.label + '</a></li>';
+      return '<li><a href="' + link.href + '">' + link.label + '</a></li>';
     }).join('');
   }
 
@@ -37,7 +34,7 @@
     '<div class="scroll-progress" aria-hidden="true"></div>' +
     '<header class="site-header">' +
       '<nav class="container navbar" aria-label="Main">' +
-        '<a class="brand" href="index.html">Kavishka Indeepa</a>' +
+        '<a class="brand" href="#home">Kavishka Indeepa</a>' +
         '<ul class="nav-links" id="nav-links">' + navItems() + '</ul>' +
         '<div class="nav-actions">' +
           '<button class="icon-button" id="theme-toggle" type="button" aria-label="Switch colour theme">' +
@@ -64,7 +61,9 @@
   document.body.insertAdjacentHTML('afterbegin', header);
   document.querySelector('main').insertAdjacentHTML('afterend', footer);
 
-  document.querySelectorAll('[data-social-links]').forEach(function (element) {
-    element.innerHTML = socialItems();
+  window.sectionsReady.then(function () {
+    document.querySelectorAll('[data-social-links]').forEach(function (element) {
+      element.innerHTML = socialItems();
+    });
   });
 })();

@@ -15,10 +15,4 @@
 
   root.setAttribute('data-theme', theme);
   root.classList.add('js');
-
-  /* Keep old links such as index.html#about working now that sections have their own pages. */
-  var oldSection = /^#(about|education|skills|projects|contact)$/.exec(location.hash);
-  if (oldSection && /(^|\/)(index\.html)?$/.test(location.pathname)) {
-    location.replace(oldSection[1] + '.html');
-  }
 })();
